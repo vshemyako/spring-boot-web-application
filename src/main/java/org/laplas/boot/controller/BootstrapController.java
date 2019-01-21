@@ -1,5 +1,7 @@
 package org.laplas.boot.controller;
 
+import org.laplas.boot.property.DefaultPropertySource;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,8 +14,25 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class BootstrapController {
 
+    private DefaultPropertySource propertySource;
+
+    @Autowired
+    public BootstrapController(DefaultPropertySource propertySource) {
+        this.propertySource = propertySource;
+    }
+
     @GetMapping(value = "/bootstrap")
     public String bootstrap() {
         return "Spring Boot application has been successfully bootstrapped";
+    }
+
+    @GetMapping(value = "/version")
+    public String version() {
+        return propertySource.getVersion();
+    }
+
+    @GetMapping(value = "/developer")
+    public String developer() {
+        return propertySource.getDeveloper();
     }
 }
