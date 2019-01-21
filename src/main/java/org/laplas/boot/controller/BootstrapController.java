@@ -1,5 +1,6 @@
 package org.laplas.boot.controller;
 
+import java.util.List;
 import org.laplas.boot.property.DefaultPropertySource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,5 +35,10 @@ public class BootstrapController {
     @GetMapping(value = "/developer")
     public String developer() {
         return propertySource.getDeveloper();
+    }
+
+    @GetMapping(value = "/technologies")
+    public List<String> technologies() {
+        return propertySource.getTechnologies();
     }
 }
