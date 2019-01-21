@@ -2,8 +2,7 @@ package org.laplas.boot.config;
 
 import org.laplas.boot.controller.WebControllerMarker;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.context.annotation.ComponentScan;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * Main Spring Boot configuration class which bootstraps the application.
@@ -11,8 +10,7 @@ import org.springframework.context.annotation.ComponentScan;
  * @author Valentine Shemyako
  * @since January 21, 2019
  */
-@ComponentScan(basePackageClasses = WebControllerMarker.class)
-@EnableAutoConfiguration
+@SpringBootApplication(scanBasePackageClasses = WebControllerMarker.class)
 public class SpringBootWebApplication {
 
     /**
