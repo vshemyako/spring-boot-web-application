@@ -5,3 +5,6 @@ application:
     - 'Java'
     - 'Spring'
     - 'Servlet'
+debug: true
+logging:
+  path: ./log
