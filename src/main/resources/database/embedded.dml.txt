@@ -1,0 +1,2 @@
+INSERT INTO Film (director, name) VALUES ('Frank Darabont', 'The Shawshank Redemption');
+INSERT INTO Film (director, name) VALUES ('Francis Ford Coppola', 'The Godfather');

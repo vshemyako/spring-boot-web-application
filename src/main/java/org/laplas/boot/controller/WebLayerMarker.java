@@ -9,5 +9,5 @@ import org.springframework.context.annotation.Configuration;
  * @since January 21, 2019
  */
 @Configuration
-public class WebControllerMarker {
+public class WebLayerMarker {
 }

@@ -5,6 +5,14 @@ application:
     - 'Java'
     - 'Spring'
     - 'Servlet'
-debug: true
+
 logging:
   path: ./log
+
+spring:
+  datasource:
+    data:
+      - classpath:/database/embedded.dml.txt
+  jpa:
+    open-in-view: false
+

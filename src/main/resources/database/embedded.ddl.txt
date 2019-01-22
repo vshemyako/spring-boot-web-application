@@ -1,0 +1,5 @@
+CREATE TABLE Film (
+  id        BIGINT PRIMARY KEY AUTO_INCREMENT,
+  director  VARCHAR(50),
+  name      VARCHAR(50)
+);
