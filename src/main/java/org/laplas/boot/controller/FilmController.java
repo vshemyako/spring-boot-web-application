@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = "/film")
-public class FileController {
+public class FilmController {
 
     private FilmService filmService;
 
     @Autowired
-    public FileController(FilmService filmService) {
+    public FilmController(FilmService filmService) {
         this.filmService = filmService;
     }
 
