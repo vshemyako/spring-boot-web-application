@@ -16,3 +16,9 @@ spring:
   jpa:
     open-in-view: false
 
+integral:
+  value:
+    big:
+      ${random.long}
+    small:
+      ${random.int}

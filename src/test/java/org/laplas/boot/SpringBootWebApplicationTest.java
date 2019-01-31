@@ -7,6 +7,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.laplas.boot.controller.FilmController;
 import org.laplas.boot.entity.Film;
+import org.laplas.boot.property.RandomPropertySource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
@@ -27,6 +28,8 @@ public class SpringBootWebApplicationTest {
     private int port;
     @Autowired
     private TestRestTemplate restTemplate;
+    @Autowired
+    private RandomPropertySource propertySource;
 
     @Test
     public void shouldPickUpContext() {
@@ -48,5 +51,15 @@ public class SpringBootWebApplicationTest {
         assertThat(film).isNotNull();
         assertThat(film.getName()).isEqualTo("The Godfather");
         assertThat(film.getDirector()).isEqualTo("Francis Ford Coppola");
+    }
+
+    @Test
+    public void shouldAssignRandomIntValue() {
+        assertThat(propertySource.getRandomIntegralNumber()).isNotNull();
+    }
+
+    @Test
+    public void shouldAssignRandomLongValue() {
+        assertThat(propertySource.getRandomBigIntegralNumber()).isNotNull();
     }
 }
